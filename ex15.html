@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>4. Para doar sangue é necessário ter entre 18 e 67 anos. Elabore o fluxograma e a implementação em Javascript
+        de um programa que pergunte a idade de uma pessoa e diga se ela pode doar sangue ou não. Utilize alguns dos
+        operadores lógicos OU (||) e E (&&).
+    </h1>
+
+    <form action="" id="myform" name="myform" class="container-sm" style="margin-top: 3rem;">
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Idade:</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" name="f_num"
+                placeholder="Informe sua idade... " required>
+        </div>
+
+
+
+        <!-- Resultado -->
+        <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Resultado:</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="" name="f_resultado"
+                disabled>
+        </div>
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary">Calcular</button>
+        </div>
+    </form>
+
+</body>
+<script>
+    const form = document.getElementById("myform").addEventListener('submit', e => {
+        e.preventDefault()
+
+        let idade = Number(document.forms['myform']['f_num'].value)
+
+
+        if (idade >= 18 && idade <= 67) {
+            document.forms['myform']['f_resultado'].value=('Você tem idade para doar sangue.')
+        } else {
+            document.forms['myform']['f_resultado'].value=('Você não tem idade para doar sangue.')
+        }
+
+    })
+
+</script>
+
+</html>
